@@ -1,115 +1,136 @@
 <div align="center">
 
-<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=24&pause=1000&color=9B59B6&center=true&vCenter=true&width=600&lines=VPS+Script;DevCulture+SSH+Tunnel+Setup;Nginx+%7C+SSL+%7C+SSH+over+443" alt="Typing SVG" />
+<img src="https://raw.githubusercontent.com/tuyulbodo99/devculture-vps/main/assets/cyberpunk-typing.png" width="100%" alt="DevCulture VPS Script - Cyberpunk" />
 
 <br/>
 
-[![Part of DevCulture](https://img.shields.io/badge/ecosystem-DevCulture-9b59b6?style=for-the-badge&logo=githubactions&logoColor=white)](https://github.com/tuyulbodo99)
-[![Shell](https://img.shields.io/badge/shell-bash-1a1a2e?style=for-the-badge&logo=gnubash&logoColor=white)](https://github.com/tuyulbodo99/vps-script)
-[![Nginx](https://img.shields.io/badge/nginx-stream-6c3483?style=for-the-badge&logo=nginx&logoColor=white)](https://nginx.org)
-[![SSL](https://img.shields.io/badge/SSL-Let%27s%20Encrypt-5b2c6f?style=for-the-badge&logo=letsencrypt&logoColor=white)](https://certbot.eff.org)
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=28&pause=1000&color=A855F7&center=true&vCenter=true&width=600&lines=DevCulture+VPS+Script;SSH+Tunnel+%26+Setup;Premium+Auto+Installer;Ubuntu+22.04+Ready)](https://git.io/typing-svg)
+
+<br/>
+
+![GitHub Stars](https://img.shields.io/github/stars/tuyulbodo99/vps-script?style=for-the-badge&color=a855f7&labelColor=0d0d0d)
+![Platform](https://img.shields.io/badge/Platform-Ubuntu%2022.04-a855f7?style=for-the-badge&logo=ubuntu&logoColor=white&labelColor=0d0d0d)
+![Shell](https://img.shields.io/badge/Shell-Bash%205-7c3aed?style=for-the-badge&logo=gnubash&logoColor=white&labelColor=0d0d0d)
 
 </div>
 
 ---
 
-## ⚡ Install — Satu Perintah, Langsung Jalan
+<div align="center">
 
-> ⚠️ **Edit variabel konfigurasi di dalam script sebelum menjalankan!**
-> Domain, username, dan email harus diisi terlebih dahulu.
+### 🚀 ONE-CLICK INSTALL
 
-**Langkah 1 — Download & edit konfigurasi:**
 ```bash
-curl -fsSL https://raw.githubusercontent.com/tuyulbodo99/vps-script/main/install -o install.sh && nano install.sh
+bash <(curl -fsSL https://raw.githubusercontent.com/tuyulbodo99/vps-script/main/setup.sh)
 ```
 
-**Langkah 2 — Jalankan:**
+</div>
+
+---
+
+## 📦 Fitur
+
+<table>
+<tr>
+<td width="50%">
+
+**🔐 SSH Tunnel Setup**
+- OpenSSH konfigurasi otomatis
+- Dropbear multi-port
+- WebSocket proxy (HTTP/HTTPS)
+- Stunnel SSL tunnel
+- Port: 22, 80, 109, 143, 443, 777
+
+</td>
+<td width="50%">
+
+**⚡ Optimasi VPS**
+- BBR TCP congestion control
+- Sysctl network tuning
+- IPv6 management
+- rc.local auto-start
+- Timezone Asia/Jakarta
+
+</td>
+</tr>
+<tr>
+<td width="50%">
+
+**🛡️ Keamanan**
+- Fail2ban brute-force protection
+- UFW firewall rules
+- SSL certificate (Let's Encrypt)
+- SSH key management
+- PAM login limits
+
+</td>
+<td width="50%">
+
+**🤖 Integrasi**
+- Sistem ijin tuyulbodo99/ijin
+- Sinkronisasi otomatis
+- Cron job management
+- Log monitoring
+
+</td>
+</tr>
+</table>
+
+---
+
+## 🛠️ Perintah
+
+### Install & Setup VPS
 ```bash
-bash install.sh
+bash <(curl -fsSL https://raw.githubusercontent.com/tuyulbodo99/vps-script/main/setup.sh)
 ```
 
-**Atau download, edit, dan langsung jalankan dalam satu blok:**
+### Setup SSH Websocket
 ```bash
-curl -fsSL https://raw.githubusercontent.com/tuyulbodo99/vps-script/main/install -o install.sh \
-  && sed -i "s/your.domain.com/DOMAIN_ANDA/g; s/your@email.com/EMAIL_ANDA/g" install.sh \
-  && bash install.sh
+bash <(curl -fsSL https://raw.githubusercontent.com/tuyulbodo99/vps-script/main/ssh/ssh-vpn.sh)
 ```
 
-### 🔄 Sync Semua Komponen DevCulture
-
+### Optimasi Jaringan (BBR)
 ```bash
-bash <(curl -fsSL https://raw.githubusercontent.com/tuyulbodo99/devculture-vps/main/sync.sh)
+bash <(curl -fsSL https://raw.githubusercontent.com/tuyulbodo99/vps-script/main/ssh/bbr.sh)
+```
+
+### Test Kecepatan VPS
+```bash
+bash <(curl -fsSL https://raw.githubusercontent.com/tuyulbodo99/vps-script/main/ssh/speedtest_cli.py)
 ```
 
 ---
 
-## 🟣 Overview
+## 📊 Port Default
 
-**VPS-Script** adalah setup SSH Tunneling via Nginx dengan dukungan SSL penuh. Cocok untuk konfigurasi SSH over port 443 menggunakan Nginx stream module dan Certbot SSL.
-
-> 🔗 **Bagian dari ekosistem DevCulture** — disinkronkan via `sync.sh`
+| Layanan | Port |
+|---------|------|
+| OpenSSH | 22 |
+| Dropbear | 109, 143 |
+| SSH WebSocket | 80 |
+| SSH SSL WebSocket | 443 |
+| Stunnel | 777 |
+| Nginx / SSL | 80, 443 |
 
 ---
 
 ## 🌐 Ekosistem DevCulture
 
-| Repo | Fungsi | One-Click Install |
-|------|--------|-------------------|
-| [`devculture-vps`](https://github.com/tuyulbodo99/devculture-vps) | 🏠 Core installer | `bash <(curl -fsSL https://raw.githubusercontent.com/tuyulbodo99/devculture-vps/main/install.sh)` |
-| [`hokagescript`](https://github.com/tuyulbodo99/hokagescript) | ⚙️ Menu scripts | `bash <(curl -fsSL https://raw.githubusercontent.com/tuyulbodo99/hokagescript/main/setup.sh)` |
-| [`vpnscript`](https://github.com/tuyulbodo99/vpnscript) | 🔒 VPN installer | `bash <(curl -fsSL https://raw.githubusercontent.com/tuyulbodo99/vpnscript/main/premi.sh)` |
-| **[`vps-script`](https://github.com/tuyulbodo99/vps-script)** | 🔧 **SSH tunnel** ← ini | lihat langkah di atas |
-| [`ijin`](https://github.com/tuyulbodo99/ijin) | 🛡️ License DB | `bash <(curl -fsSL https://raw.githubusercontent.com/tuyulbodo99/ijin/main/check-ijin.sh)` |
-
----
-
-## ⚙️ Konfigurasi
-
-Edit bagian ini di awal file `install` sebelum menjalankan:
-
-```bash
-YOUR_DOMAIN="your.domain.com"   # Domain yang sudah pointing ke VPS
-SSH_USERNAME="admin"             # Username SSH baru
-SSH_PASSWORD=""                  # Kosongkan → gunakan SSH Key
-CERTBOT_EMAIL="your@email.com"  # Email untuk notifikasi SSL
-SSH_TUNNEL_PORT=443              # Port tunnel (default 443)
-SSH_INTERNAL_PORT=22             # Port SSH internal
-```
-
----
-
-## 🔄 Proses Instalasi Otomatis
-
-```
-1. Uninstall Nginx & Certbot lama
-2. Install OpenSSH Server
-3. Install Nginx Full (dengan modul stream)
-4. Install Certbot via snap
-5. Konfigurasi Nginx stream → SSH tunnel
-6. Dapatkan SSL certificate (Let's Encrypt)
-7. Buat user SSH baru
-8. Restart semua layanan
-```
-
----
-
-## 📋 Requirements
-
-| Item | Detail |
-|------|--------|
-| OS | Debian 10/11/12 · Ubuntu 20/22 |
-| Akses | **Root** |
-| Domain | Sudah pointing ke IP VPS |
-| Port 80 | Harus bebas (verifikasi SSL) |
-| Port 443 | Harus bebas sebelum install |
+| Repository | Fungsi |
+|------------|--------|
+| 🟣 [devculture-vps](https://github.com/tuyulbodo99/devculture-vps) | Core Panel + SSH + WebSocket |
+| 🟣 [hokagescript](https://github.com/tuyulbodo99/hokagescript) | Menu Layanan & Services |
+| 🟣 [vpnscript](https://github.com/tuyulbodo99/vpnscript) | Full VPN Installer |
+| 🟣 [vps-script](https://github.com/tuyulbodo99/vps-script) | SSH Tunnel Setup |
+| 🟣 [ijin](https://github.com/tuyulbodo99/ijin) | Sistem Lisensi & Perizinan |
 
 ---
 
 <div align="center">
 
-[![Telegram](https://img.shields.io/badge/Order%20%26%20Support-@devculturebot-9b59b6?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/devculturebot)
-[![GitHub](https://img.shields.io/badge/GitHub-tuyulbodo99-1a1a2e?style=for-the-badge&logo=github&logoColor=white)](https://github.com/tuyulbodo99)
+**DevCulture VPS Store** · [github.com/tuyulbodo99](https://github.com/tuyulbodo99) · [@devculturebot](https://t.me/devculturebot)
 
-<sub>© 2024 DevCulture VPS Store · Part of <a href="https://github.com/tuyulbodo99">tuyulbodo99</a> Ecosystem</sub>
+![Footer](https://capsule-render.vercel.app/api?type=waving&color=a855f7&height=80&section=footer)
 
 </div>
