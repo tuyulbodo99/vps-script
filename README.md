@@ -13,6 +13,10 @@
 ![Shell](https://img.shields.io/badge/Bash-5.x-7c3aed?style=for-the-badge&logo=gnubash&logoColor=white&labelColor=0d0d0d)
 ![TCP+UDP](https://img.shields.io/badge/Protocol-TCP%20%2B%20UDP-a855f7?style=for-the-badge&labelColor=0d0d0d)
 
+<br/>
+
+<img src="https://raw.githubusercontent.com/tuyulbodo99/devculture-vps/main/assets/online.svg" alt="NGINX ONLINE" />
+
 </div>
 
 ---
@@ -22,7 +26,7 @@
 ### 🚀 ONE-CLICK INSTALL
 
 ```bash
-bash <(curl -fsSL https://raw.githubusercontent.com/tuyulbodo99/vps-script/main/setup.sh)
+bash <(curl -fsSL https://raw.githubusercontent.com/tuyulbodo99/vps-script/main/install)
 ```
 
 </div>
@@ -50,20 +54,17 @@ bash <(curl -fsSL https://raw.githubusercontent.com/tuyulbodo99/vps-script/main/
 user@pass:host:port
 
 Contoh per protokol:
-  devculture@pass:host:22      → OpenSSH
-  devculture@pass:host:109     → Dropbear
-  devculture@pass:host:143     → Dropbear Alt
-  devculture@pass:host:80      → SSH WebSocket
-  devculture@pass:host:443     → SSH SSL/WSS
-  devculture@pass:host:777     → Stunnel
-  devculture@pass:host:7300    → UDPGW (UDP)
-  devculture@pass:host:5300    → SlowDNS (UDP)
+  vpnuser@pass:host:22      → OpenSSH
+  vpnuser@pass:host:109     → Dropbear
+  vpnuser@pass:host:143     → Dropbear Alt
+  vpnuser@pass:host:80      → SSH WebSocket
+  vpnuser@pass:host:443     → SSH SSL/WSS
+  vpnuser@pass:host:777     → Stunnel
+  vpnuser@pass:host:7300    → UDPGW (UDP)
+  vpnuser@pass:host:5300    → SlowDNS (UDP)
 
 KPN Tunnel / VNPK:
-  devculture@pass:host:22:udp:7300
-
-SlowDNS format:
-  devculture@pass:host:5300:dns:ns1.devculture.id
+  vpnuser@pass:host:22:udp:7300
 ```
 
 ---
@@ -93,22 +94,6 @@ Upgrade: websocket[crlf][crlf]
 
 ---
 
-## 🌐 Config SlowDNS / DNS Tunnel
-
-```
-Mode         : DNS Tunnel
-DNS Server   : [IP VPS kamu]
-DNS Port     : 5300 (UDP)
-Nameserver   : ns1.devculture.id
-SSH Host     : [IP VPS kamu]
-SSH Port     : 22
-Username     : [username]
-Password     : [password]
-UDPGW        : [IP VPS]:7300
-```
-
----
-
 ## ⚡ Config KPN Tunnel / OpenTunnel / VNPK
 
 ```
@@ -123,22 +108,25 @@ UDPGW Port   : 7300 (UDP)
 
 ---
 
-## 📦 Fitur Setup
+## 📦 Fitur Utama
 
-- OpenSSH + Dropbear multi-port
-- WebSocket proxy (HTTP/HTTPS)
-- Stunnel SSL tunnel
-- BadVPN UDPGW (UDP gaming/streaming)
-- BBR TCP optimization
-- Fail2ban + UFW firewall
+- Setup SSH Tunnel lengkap (Dropbear, Stunnel, WebSocket)
+- UDPGW / BadVPN untuk UDP
+- SlowDNS installer
+- Nginx WebSocket proxy siap pakai
+- Update script satu perintah
+- Health check semua service
 
-
+---
 
 ## 🛠️ Perintah Utama
 
 ```bash
-# Install
-bash <(curl -fsSL https://raw.githubusercontent.com/tuyulbodo99/vps-script/main/setup.sh)
+# Install (satu perintah)
+bash <(curl -fsSL https://raw.githubusercontent.com/tuyulbodo99/vps-script/main/install)
+
+# Cek kesehatan semua service setelah install
+bash <(curl -fsSL https://raw.githubusercontent.com/tuyulbodo99/devculture-vps/main/healthcheck.sh)
 
 # SSH langsung semua port
 ssh user@host -p 22    # OpenSSH
@@ -146,22 +134,18 @@ ssh user@host -p 109   # Dropbear
 ssh user@host -p 80    # WebSocket HTTP
 ssh user@host -p 443   # WebSocket SSL
 ssh user@host -p 777   # Stunnel
-
-# BadVPN UDPGW (aktifkan UDP di VPS)
-badvpn-udpgw --listen-addr 127.0.0.1:7300
 ```
 
 ---
 
 ## 🌐 Ekosistem DevCulture
 
-| Repo | Fungsi | Install |
-|------|--------|---------|
-| 🟣 [devculture-vps](https://github.com/tuyulbodo99/devculture-vps) | Core Panel SSH + WebSocket | `install.sh` |
-| 🟣 [hokagescript](https://github.com/tuyulbodo99/hokagescript) | Menu Layanan & Services | `setup.sh` |
-| 🟣 [vpnscript](https://github.com/tuyulbodo99/vpnscript) | Full VPN (OpenVPN+WG+SlowDNS) | `premi.sh` |
-| 🟣 [vps-script](https://github.com/tuyulbodo99/vps-script) | SSH Tunnel Setup | `setup.sh` |
-| 🟣 [ijin](https://github.com/tuyulbodo99/ijin) | Sistem Lisensi & Perizinan | `check-ijin.sh` |
+| Repo | Fungsi | One-Click Install |
+|------|--------|-------------------|
+| 🟣 [devculture-vps](https://github.com/tuyulbodo99/devculture-vps) | Core Panel SSH + WebSocket | `bash <(curl -fsSL https://raw.githubusercontent.com/tuyulbodo99/devculture-vps/main/install.sh)` |
+| 🟣 [hokagescript](https://github.com/tuyulbodo99/hokagescript) | Menu Layanan & Services | `bash <(curl -fsSL https://raw.githubusercontent.com/tuyulbodo99/hokagescript/main/setup.sh)` |
+| 🟣 [vpnscript](https://github.com/tuyulbodo99/vpnscript) | Full VPN (OpenVPN+WG+SlowDNS) | `bash <(curl -fsSL https://raw.githubusercontent.com/tuyulbodo99/vpnscript/main/premi.sh)` |
+| 🟣 [vps-script](https://github.com/tuyulbodo99/vps-script) | SSH Tunnel Setup | `bash <(curl -fsSL https://raw.githubusercontent.com/tuyulbodo99/vps-script/main/install)` |
 
 ---
 
@@ -175,7 +159,7 @@ badvpn-udpgw --listen-addr 127.0.0.1:7300
 
 <div align="center">
 
-**DevCulture VPS Store** · [github.com/tuyulbodo99](https://github.com/tuyulbodo99) · [@devculturebot](https://t.me/devculturebot)
+**DevCulture VPS Script** · [github.com/tuyulbodo99](https://github.com/tuyulbodo99) · [@devculturebot](https://t.me/devculturebot)
 
 ![Footer](https://capsule-render.vercel.app/api?type=waving&color=a855f7&height=80&section=footer)
 
