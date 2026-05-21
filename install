@@ -1,16 +1,16 @@
 #!/bin/bash
 
 # --- VARIBEL YANG PERLU DIKONFIGURASI ---
-YOUR_DOMAIN="14.hokageyoutube.my.id"  # Ganti dengan domain Anda
-SSH_USERNAME="hokage"                 # Ganti dengan username SSH yang Anda inginkan
-SSH_PASSWORD="legend"                 # Ganti dengan password SSH (DIREKOMENDASIKAN MENGGUNAKAN SSH KEY!)
+YOUR_DOMAIN="your.domain.com"  # Ganti dengan domain Anda  # Ganti dengan domain Anda
+SSH_USERNAME="admin"                 # Ganti dengan username SSH Anda                 # Ganti dengan username SSH yang Anda inginkan
+SSH_PASSWORD=""                      # Set via input atau SSH Key - JANGAN hardcode!                 # Ganti dengan password SSH (DIREKOMENDASIKAN MENGGUNAKAN SSH KEY!)
                                      # Jika Anda tidak ingin password di sini, hapus baris ini dan
                                      # ganti perintah useradd dengan "sudo useradd -m -s /bin/bash ${SSH_USERNAME}"
                                      # Lalu tambahkan SSH Key secara manual.
 
 SSH_TUNNEL_PORT=443                  # Port Nginx untuk tunneling SSH (umumnya 443 dengan SSL)
 SSH_INTERNAL_PORT=22                 # Port SSH server (default 22)
-CERTBOT_EMAIL="faridaumiabi@gmail.com" # Ganti dengan alamat email Anda untuk notifikasi Certbot
+CERTBOT_EMAIL="your@email.com"            # Ganti dengan email Anda # Ganti dengan alamat email Anda untuk notifikasi Certbot
 
 # --- FUNGSI LOGGING ---
 log_info() {
